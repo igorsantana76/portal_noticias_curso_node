@@ -1,7 +1,7 @@
 module.exports = function(application){
 
-    // Devida implementação das rotas
-    //, basicamente para chamar a função da controller
+    // Está é forma correta de se implementar rotas
+    //, sua função é basicamente para chamar a controller da view 
 
     application.get('/formulario_add_noticia', function(req, res){
         application.app.controllers.admin.formulario_inclusao_noticia(application, req, res);

@@ -4,9 +4,6 @@ module.exports.index = function(application, req, res){
     var noticiasModel = new application.app.models.NoticiasDAO(connection);
 
     noticiasModel.listLastFiveNoticias(function(error, result){
-
-        console.log(result);
-
         res.render("home/index", { noticias : result });
     });
 }
