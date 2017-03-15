@@ -12,6 +12,10 @@ app.set('view engine', 'ejs');
 // Folder padrão das views
 app.set('views', './app/views');
 
+// Inclusão de todos os arquivos estaticos
+//, simulando como se todos estivessem na raiz do App
+app.use(express.static('./app/public')); // Show
+
 // Incluindo o BodyParser no Express
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -21,8 +25,8 @@ app.use(expressValidator());
 consign()
     .include('app/routes')
     .then('/config/dbConnection.js')
-    .then('app/models')       // Load dos models
-    .then('app/controllers')  // Load das controllers
+    .then('app/models')              // Inclusão dos models no modulo App
+    .then('app/controllers')        // Inclusão dos models no modulo App
     .into(app);
 
 module.exports = app;
