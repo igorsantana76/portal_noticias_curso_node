@@ -10,13 +10,16 @@
 		
 		<table>
 			<tr>
+				<td>Id</td>
 				<td>Titulo</td>
+				<td>Autor</td>
 			</tr>
 			
-
 			<% noticias.forEach(function(noticia){ %>
 				<tr>
+					<td><%= noticia.id %></td>
 					<td><%= noticia.titulo %></td>
+					<td><%= noticia.autor %></td>
 				</tr>
 			<% })%>
 		</table>

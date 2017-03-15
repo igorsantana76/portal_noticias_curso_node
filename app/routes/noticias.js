@@ -8,7 +8,7 @@ module.exports = function(application){
 
         noticiasModel.getNoticias(function(error, result){
 
-            //connection.end();
+            connection.end();
             res.render('noticias/noticias', { noticias : result });
         });
     });

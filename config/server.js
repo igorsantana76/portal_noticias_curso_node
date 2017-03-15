@@ -2,6 +2,7 @@
 var express = require('express');
 var consign = require('consign');
 var bodyParser = require('body-parser');
+var expressValidator = require('express-validator'); 
 
 var app = express();
 
@@ -13,6 +14,9 @@ app.set('views', './app/views');
 
 // Incluindo o BodyParser no Express
 app.use(bodyParser.urlencoded({extended: true}));
+
+// Incluindo o expressValidator no Express
+app.use(expressValidator());
 
 consign()
     .include('app/routes')
