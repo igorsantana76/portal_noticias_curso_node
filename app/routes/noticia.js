@@ -1,15 +1,15 @@
 
-module.exports = function(app){
+module.exports = function(application){
 
-    app.get('/noticia', function(req, res){
+    application.get('/noticia', function(req, res){
 
-        var connection =  app.config.dbConnection();
-        var noticiasModel = app.app.models.noticiasModel;
+        var connection =  application.config.dbConnection();
+        var noticiasModel = new application.app.models.NoticiasDAO(connection);
 
-        noticiasModel.getNoticia(connection, 2, function(error, result){
+        noticiasModel.getNoticia(2, function(error, result){
 
+            //connection.end();
             res.render('noticias/noticia', {noticia : result[0]});
-            connection.end();
         })
     });
 }
