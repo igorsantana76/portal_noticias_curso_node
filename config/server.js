@@ -21,7 +21,8 @@ app.use(expressValidator());
 consign()
     .include('app/routes')
     .then('/config/dbConnection.js')
-    .then('app/models')
+    .then('app/models')       // Load dos models
+    .then('app/controllers')  // Load das controllers
     .into(app);
 
 module.exports = app;
