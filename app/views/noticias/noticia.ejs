@@ -41,13 +41,12 @@
 			</div>
 		</nav>
 
-
 	    <div class="container">
 	    	<div class="row">
 	    		<div class="col-md-12">
 	    			<div class="noticia_wrapper">
 		    			<span class="noticia_autor"><%= noticia.autor %></span>
-		    			<a href="noticia/1" class="noticia_titulo"><%= noticia.titulo %></a>
+		    			<a href="/noticia?id=<%= noticia.id %>" class="noticia_titulo"><%= noticia.titulo %></a>
 		    			<span class="noticia_data"><%= noticia.data_noticia %></span>
 		    			<br />
 		    			<p class="noticia_resumo">
